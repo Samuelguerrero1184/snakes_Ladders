@@ -10,51 +10,6 @@ public class BoardControl {
 		finish=null;
 	}
 	
-	
-	//validating and controlling the cells
-
-	
-	public void addBoard(int rowXcolumns) {  
-		if(start==null) {
-			Board bd =  new Board(rowXcolumns);
-			start = bd;
-			finish = bd;
-		}else {
-			Board board =  new Board(rowXcolumns);
-			finish.setNextMvmnt(board);
-			finish=board;
-		}
-	}
-	
-	public Board Board(int pos) {  
-		return searchMvmnt(pos, start);
-	}	
-
-	private Board searchMvmnt(int pos, Board a) {
-		if(a.getSize()==pos) {
-			return a;
-		}else {
-			a=a.getNextMvmnt();
-			return searchMvmnt(pos, a);
-		}
-	}
-	
-	public void pos(int i) {
-		tPos(i,start);
-	}
-	
-	private void tPos(int i, Board aoral) {
-		if(i>0) {
-		aoral.setPlayers("");
-		aoral=aoral.getNextMvmnt();
-		tPos(i=i-1,aoral);
-		}
-	}
-	
-	public void symb(String players) {
-		finish.setPlayers(players);
-	}
-	
 	//validation for snakes and ladders
 	
 	public boolean valLadder(Board ladders) {
@@ -104,4 +59,51 @@ public class BoardControl {
 			return Snake(s, a);
 		}
 	}
+	//validating and controlling the cells
+
+	
+	public void addBoard(int size) {  
+		if(start==null) {
+			Board bd =  new Board(size);
+			start = bd;
+			finish = bd;
+		}else {
+			Board board =  new Board(size);
+			finish.setNextMvmnt(board);
+			finish=board;
+		}
+	}
+	
+	public Board Board(int pos) {  
+		return searchMvmnt(pos, start);
+	}	
+
+	private Board searchMvmnt(int pos, Board a) {
+		if(a.getSize()==pos) {
+			return a;
+		}else {
+			a=a.getNextMvmnt();
+			return searchMvmnt(pos, a);
+		}
+	}
+	
+
+	
+	public void symb(String players) {
+		finish.setPlayers(players);
+	}
+
+	public void pos(int i) {
+		System.out.println("i");
+		tPos(i,start);
+	}
+	
+	private void tPos(int i, Board aoral) {
+		if(i>0) {
+		aoral.setPlayers("");
+		aoral=aoral.getNextMvmnt();
+		tPos(i=i-1,aoral);
+		}
+	}
+	
 }

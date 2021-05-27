@@ -14,14 +14,34 @@ public class Player {
 	private int numSnakes;
 	private int numLadders;
 	private int numPlayers;
+	private Player parent;
+	private Player left;
+	private Player right;
 	
+	public Player getLeft() {
+		return left;
+	}
+	public void setLeft(Player left) {
+		this.left = left;
+	}
+	public Player getRight() {
+		return right;
+	}
+	public void setRight(Player right) {
+		this.right = right;
+	}
+	public Player getParent() {
+		return parent;
+	}
+	public void setParent(Player parent) {
+		this.parent = parent;
+	}
 	public Player(char player, int order) {
 		this.player = player;
 		this.order = order;
 		positions = 0;
 	}
-	public Player(Player nextPlayer, int score, int col, int rows, int numSnakes, int numLadders, int numPlayers) {
-		this.nextPlayer = nextPlayer;
+	public Player(int score, int col, int rows, int numSnakes, int numLadders, int numPlayers) {
 		this.score = score;
 		this.col = col;
 		this.rows = rows;

@@ -70,7 +70,7 @@ public class Menu  {
 	private void startBoard(int size) {
 
 		}
-	private void strtPlayers(int i, String players) {
+	private void strtPlayers(int i, String players) {		
 		boardC.pos(i);
 		boardC.symb(players);
 	}
