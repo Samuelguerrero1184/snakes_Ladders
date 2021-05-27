@@ -19,7 +19,7 @@ public class BoardControl {
 	}
 	
 	
-	//Using and controlling the cells
+	//validating and controlling the cells
 
 	
 	public void addBoard(int rowXcolumns) {  
@@ -61,6 +61,61 @@ public class BoardControl {
 	
 	public void assignPlayer(String players) {
 		finish.setPlayers(players);
+	}
+	
+	//validation for snakes and ladders
+	
+	public boolean checkLadder(Board ladders) {
+		boolean found = false;
+		if(ladders.getLadders()==0) {
+			found =true;
+		}
+		return found;
+	}
+	
+	public void putLadder(char ladder, Board pos) {
+		pos.setLadders(ladder);
+	}
+
+	public boolean checkSnake(Board snakes) {
+		boolean found = false;
+		if(snakes.getSnakes()==0) {
+			found =true;
+		}
+		return found;
+	}
+
+	public void putSnake(char snake, Board pos) {
+		pos.setSnakes(snake);
+	}
+
+	public Board searchSnake(char snake) {
+		return searchSnake(snake, start);
+	}
+
+	
+	private Board searchSnake(char s, Board temp) {
+		if(temp.getSnakes()==s) {
+			return temp;
+		}else {
+			temp=temp.getNextMvmnt();
+			return searchSnake(s, temp);
+		}
+	}
+
+	
+	public Board searchLadder(char ladder) {
+		return searchLadder(ladder, start);
+	}
+
+	
+	private Board searchLadder(char l, Board temp) {
+		if(temp.getLadders()==l) {
+			return temp;
+		}else {
+			temp=temp.getNextMvmnt();
+			return searchLadder(l, temp);
+		}
 	}
 	
 	
