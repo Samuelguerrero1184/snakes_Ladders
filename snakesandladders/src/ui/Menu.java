@@ -16,7 +16,6 @@ public class Menu  {
 	
 	static BufferedReader br;
 	private static Board board;
-	private static Tile tile;
 
 
 	public void showmenu() {
@@ -39,19 +38,14 @@ public class Menu  {
 		
 		
 		if(size>snakesAndLaddersValidation) {
-		Board bd = new Board(Integer.parseInt(initialData[0]), Integer.parseInt(initialData[1]), Integer.parseInt(initialData[2]), Integer.parseInt(initialData[3]),initialData[4]);
-		System.out.println(bd);
-		System.out.println(bd.getNumPlayers());
+
 		}
 	}
 	
 	private void startBoard(int size) {
-		if(size>= 1) {	
-			tile.addList(size);
-			size=size-1;
-			createList(size);
+
 		}
-	}
+	
 	
 	
 
