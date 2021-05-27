@@ -3,19 +3,11 @@ package model;
 public class BoardControl {
 	private Board start;
 	private Board finish;
-	private Player first;
-	private Player last;
-	private String table;
-	private String table2;
-
-	
 
 	
 	public BoardControl() {
 		start=null;
 		finish=null;
-		table="";
-		table2="";
 	}
 	
 	
@@ -38,34 +30,34 @@ public class BoardControl {
 		return searchMvmnt(pos, start);
 	}	
 
-	private Board searchMvmnt(int pos, Board temp) {
-		if(temp.getRowXcolumn()==pos) {
-			return temp;
+	private Board searchMvmnt(int pos, Board a) {
+		if(a.getSize()==pos) {
+			return a;
 		}else {
-			temp=temp.getNextMvmnt();
-			return searchMvmnt(pos, temp);
+			a=a.getNextMvmnt();
+			return searchMvmnt(pos, a);
 		}
 	}
 	
-	public void assignSpaces(int i) {
-		assignSpaces(i,start);
+	public void pos(int i) {
+		tPos(i,start);
 	}
 	
-	private void assignSpaces(int i, Board temporal) {
+	private void tPos(int i, Board aoral) {
 		if(i>0) {
-		temporal.setPlayers("");
-		temporal=temporal.getNextMvmnt();
-		assignSpaces(i=i-1,temporal);
+		aoral.setPlayers("");
+		aoral=aoral.getNextMvmnt();
+		tPos(i=i-1,aoral);
 		}
 	}
 	
-	public void assignPlayer(String players) {
+	public void symb(String players) {
 		finish.setPlayers(players);
 	}
 	
 	//validation for snakes and ladders
 	
-	public boolean checkLadder(Board ladders) {
+	public boolean valLadder(Board ladders) {
 		boolean found = false;
 		if(ladders.getLadders()==0) {
 			found =true;
@@ -73,11 +65,22 @@ public class BoardControl {
 		return found;
 	}
 	
-	public void putLadder(char ladder, Board pos) {
+	public void addLadder(char ladder, Board pos) {
 		pos.setLadders(ladder);
 	}
+	public Board Ladder(char ladder) {
+		return Ladder(ladder, start);
+	}
+	private Board Ladder(char l, Board a) {
+		if(a.getLadders()==l) {
+			return a;
+		}else {
+			a=a.getNextMvmnt();
+			return Ladder(l, a);
+		}
+	}
 
-	public boolean checkSnake(Board snakes) {
+	public boolean valSnake(Board snakes) {
 		boolean found = false;
 		if(snakes.getSnakes()==0) {
 			found =true;
@@ -85,38 +88,20 @@ public class BoardControl {
 		return found;
 	}
 
-	public void putSnake(char snake, Board pos) {
+	public void addSnake(char snake, Board pos) {
 		pos.setSnakes(snake);
 	}
 
-	public Board searchSnake(char snake) {
-		return searchSnake(snake, start);
+	public Board Snake(char snake) {
+		return Snake(snake, start);
 	}
 
-	
-	private Board searchSnake(char s, Board temp) {
-		if(temp.getSnakes()==s) {
-			return temp;
+	private Board Snake(char s, Board a) {
+		if(a.getSnakes()==s) {
+			return a;
 		}else {
-			temp=temp.getNextMvmnt();
-			return searchSnake(s, temp);
+			a=a.getNextMvmnt();
+			return Snake(s, a);
 		}
 	}
-
-	
-	public Board searchLadder(char ladder) {
-		return searchLadder(ladder, start);
-	}
-
-	
-	private Board searchLadder(char l, Board temp) {
-		if(temp.getLadders()==l) {
-			return temp;
-		}else {
-			temp=temp.getNextMvmnt();
-			return searchLadder(l, temp);
-		}
-	}
-	
-	
 }

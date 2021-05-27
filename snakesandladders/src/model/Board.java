@@ -2,92 +2,75 @@ package model;
 
 
 public class Board {
-	
 
 	private char snakes;
 	private char ladders;
-	private int rowXcolumn;
-	private String contentLeft;
-	private String contentRight;
+	private int size;
+	private char leftCorchette;
+	private char rightCorchette;
 	private String players;
 	private Board nextMvmnt;
 	
 
 	public Board(int rowAndColumn) {
-		this.rowXcolumn= rowAndColumn;
-		contentLeft = "[";
-		contentRight="]";
+		this.size= rowAndColumn;
+		leftCorchette = '['; rightCorchette =']';
 	}
 	
-
 	public char getSnakes() {
 		return snakes;
 	}
-
 
 	public void setSnakes(char snakes) {
 		this.snakes = snakes;
 	}
 
-
 	public char getLadders() {
 		return ladders;
 	}
-
 
 	public void setLadders(char ladders) {
 		this.ladders = ladders;
 	}
 	
-
-	public int getRowXcolumn() {
-		return rowXcolumn;
+	public int getSize() {
+		return size;
 	}
 	
-
-
-	public void setRowXcolumn(int rowAndColumn) {
-		this.rowXcolumn = rowAndColumn;
+	public void setSize(int rowAndColumn) {
+		this.size = rowAndColumn;
 	}
 
-	public String getContentLeft() {
-		return contentLeft;
+	public char getLeftCorchette() {
+		return leftCorchette;
 	}
 
-	public void setContentLeft(String contentLeft) {
-		this.contentLeft = contentLeft;
+	public void setLeftCorchette(char leftCorchette) {
+		this.leftCorchette = leftCorchette;
 	}
 	
-	
-	public String getContentRight() {
-		return contentRight;
+	public char getRightCorchette() {
+		return rightCorchette;
 	}
 	
-
-	public void setContentRight(String contentRight) {
-		this.contentRight = contentRight;
+	public void setRightCorchette(char rightCorchette) {
+		this.rightCorchette = rightCorchette;
 	}
 
-	
 	public Board getNextMvmnt() {
 		return nextMvmnt;
 	}
-	
 
 	public void setNextMvmnt(Board nextMvmnt) {
 		this.nextMvmnt = nextMvmnt;
 	}
-	
-
 
 	public String getPlayers() {
 		return players;
 	}
 
-
 	public void setPlayers(String players) {
 		this.players = players;
 	}
-
 }
 
