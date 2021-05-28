@@ -5,8 +5,10 @@ placed snakes and ladder over the board, but the cuantity is the users choice, i
 who ever makes it to the end of the board is the winner of the game.
 
 DOCUMENTATION:
-Class diagram & functional requirments -
+Class diagram & functional requirments - https://github.com/Samuelguerrero1184/snakes_Ladders/blob/main/snakesandladders/docs/Reqfuncionales-diagrama-clases.pdf
+
 Javadoc -
+
 Change log -
 
 TOOLS:
