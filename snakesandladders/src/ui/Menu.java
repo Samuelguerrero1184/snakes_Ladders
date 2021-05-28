@@ -12,9 +12,6 @@ import java.util.Random;
 import model.*;
 
 
-
-
-
 public class Menu  {
 	
 	static BufferedReader br;
@@ -135,14 +132,14 @@ public class Menu  {
 						System.out.println(boardC.showContent(row, column));
 						System.out.println("Player " +player+" has won!" );
 						System.out.println("Now, put your name: ");
-						String nickname = br.readLine();
+						String realName = br.readLine();
 					
 						leaderBoard.startGame(boardC.allMvmnts(boardC.player(turn))*(row*column), column, row, snake, ladders, amountPlayers, player);// binary three
-						System.out.println("Player: "+nickname+"\n" +"Score: " +boardC.allMvmnts(boardC.player(turn))*(row*column)+"\n");
+						System.out.println("Player: "+realName+"\n" +"Score: " +boardC.allMvmnts(boardC.player(turn))*(row*column)+"\n");
 						startprogram();
 					}else {
 						System.out.println(boardC.showContent(row, column));
-						play(turn++, amountPlayers, row,column, snake, ladders, simulationMode);
+						play(turn=turn+1, amountPlayers, row,column, snake, ladders, simulationMode);
 					}
 				}else if(next.equalsIgnoreCase("num")){
 					System.out.println(boardC.addContent(row, column));
@@ -150,7 +147,6 @@ public class Menu  {
 				}else if(next.equalsIgnoreCase("menu")){
 					startprogram();
 				}else if(next.equalsIgnoreCase("simul")) {
-					System.out.println("Wait 2 seconds . . .");
 					simulationMode = true;
 					play(turn, amountPlayers, row,column, snake, ladders, simulationMode);
 				}
@@ -177,9 +173,9 @@ public class Menu  {
 						System.out.println("Player " +player+" has won!" );
 						System.out.println("Now, put your name: ");
 						releaseEnter();
-						String nickname = br.readLine();
+						String realName = br.readLine();
 						leaderBoard.startGame( boardC.allMvmnts(boardC.player(turn))*(row*column), column, row, snake, ladders, amountPlayers, player);// calling binary three
-						System.out.println("Player: "+nickname+"\n" +"Score: " +boardC.allMvmnts(boardC.player(turn))*(row*column)+"\n");
+						System.out.println("Player: "+realName+"\n" +"Score: " +boardC.allMvmnts(boardC.player(turn))*(row*column)+"\n");
 						startprogram();
 					}else {
 						System.out.println(boardC.showContent(row, column));
