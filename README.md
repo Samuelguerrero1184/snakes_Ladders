@@ -9,7 +9,7 @@ Class diagram & functional requirments - https://github.com/Samuelguerrero1184/s
 
 Javadoc -
 
-Change log -
+Change log -https://github.com/Samuelguerrero1184/snakes_Ladders/blob/main/CHANGELOG.md
 
 TOOLS:
 Eclipse
