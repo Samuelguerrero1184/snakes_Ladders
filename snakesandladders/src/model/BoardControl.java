@@ -2,7 +2,7 @@ package model;
 
 public class BoardControl {
 	private Board start;
-	private Board finish;
+	private Board end;
 	private Player one;
 	private Player two;
 	Player player;
@@ -12,7 +12,7 @@ public class BoardControl {
 	
 	public BoardControl() {
 		start=null;
-		finish=null;
+		end=null;
 		
 	}
 	//-----------------------------------------------------------------------------------------------------------------
@@ -137,13 +137,13 @@ public class BoardControl {
 
 	public void addBoard(int size) {  
 		if(start==null) {
-			Board bd =  new Board(size);
+			Board bd = new Board(size);
 			start = bd;
-			finish = bd;
+			end = bd;
 		}else {
-			Board board =  new Board(size);
-			finish.setNextMvmnt(board);
-			finish=board;
+			Board board = new Board(size);
+			end.setNextMvmnt(board);
+			end=board;
 		}
 	}
 	
@@ -161,19 +161,18 @@ public class BoardControl {
 	}
 	
 	public void symb(String players) {
-		finish.setPlayers(players);
+		end.setPlayers(players);
 	}
 
 	public void pos(int i) {
-		System.out.println("i");
-		tPos(i,start);
+		tPos(i, start);
 	}
 	
 	private void tPos(int i, Board board) {
 		if(i>0) {
 		board.setPlayers("");
 		board=board.getNextMvmnt();
-		tPos(i--,board);
+		tPos(i=i-1,board);
 		}
 	}
 	

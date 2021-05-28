@@ -41,13 +41,14 @@ public class Player {
 		this.order = order;
 		positions = 0;
 	}
-	public Player(int score, int col, int rows, int numSnakes, int numLadders, int numPlayers) {
+	public Player(int score, int col, int rows, int numSnakes, int numLadders, int numPlayers, char player) {
 		this.score = score;
 		this.col = col;
 		this.rows = rows;
 		this.numSnakes = numSnakes;
 		this.numLadders = numLadders;
 		this.numPlayers = numPlayers;
+		this.player = player;
 	}
 	
 	public char getPlayer() {

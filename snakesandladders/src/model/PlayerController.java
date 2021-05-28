@@ -14,8 +14,8 @@ public class PlayerController {
 		position = 0;
 	}
 	
-	public void startGame(int score, int columns, int rows, int snakes, int ladders, int players) throws FileNotFoundException, IOException {
-		Player newPlayer = new Player(score, columns, rows, snakes, ladders, players);
+	public void startGame(int score, int columns, int rows, int snakes, int ladders, int players, char player) throws FileNotFoundException, IOException {
+		Player newPlayer = new Player(score, columns, rows, snakes, ladders, players, player);
 		if (root == null) {
 			root = newPlayer;
 		} else {
