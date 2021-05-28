@@ -1,6 +1,5 @@
 package model;
 
-
 public class Board {
 
 	private char snakes;
@@ -10,13 +9,13 @@ public class Board {
 	private char rightCorchette;
 	private String players;
 	private Board nextMvmnt;
-	
 
 	public Board(int size) {
-		this.size= size;
-		leftCorchette = '['; rightCorchette =']';
+		this.size = size;
+		leftCorchette = '[';
+		rightCorchette = ']';
 	}
-	
+
 	public char getSnakes() {
 		return snakes;
 	}
@@ -32,11 +31,11 @@ public class Board {
 	public void setLadders(char ladders) {
 		this.ladders = ladders;
 	}
-	
+
 	public int getSize() {
 		return size;
 	}
-	
+
 	public void setSize(int rowAndColumn) {
 		this.size = rowAndColumn;
 	}
@@ -48,11 +47,11 @@ public class Board {
 	public void setLeftCorchette(char leftCorchette) {
 		this.leftCorchette = leftCorchette;
 	}
-	
+
 	public char getRightCorchette() {
 		return rightCorchette;
 	}
-	
+
 	public void setRightCorchette(char rightCorchette) {
 		this.rightCorchette = rightCorchette;
 	}
@@ -73,4 +72,3 @@ public class Board {
 		this.players = players;
 	}
 }
-

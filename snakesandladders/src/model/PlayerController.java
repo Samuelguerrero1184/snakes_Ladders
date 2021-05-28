@@ -7,14 +7,14 @@ public class PlayerController {
 
 	private Player root;
 	private int position;
-	
-	
-	public PlayerController () {
+
+	public PlayerController() {
 		root = null;
 		position = 0;
 	}
-	
-	public void startGame(int score, int columns, int rows, int snakes, int ladders, int players, char player) throws FileNotFoundException, IOException {
+
+	public void startGame(int score, int columns, int rows, int snakes, int ladders, int players, char player)
+			throws FileNotFoundException, IOException {
 		Player newPlayer = new Player(score, columns, rows, snakes, ladders, players, player);
 		if (root == null) {
 			root = newPlayer;
@@ -22,7 +22,7 @@ public class PlayerController {
 			addPlayer(root, newPlayer);
 		}
 	}
-	
+
 	public void addPlayer(Player root, Player newPlayer) {
 		if (newPlayer.getScore() <= root.getScore()) {
 			if (root.getRight() != null) {
@@ -38,9 +38,9 @@ public class PlayerController {
 				root.setLeft(newPlayer);
 				newPlayer.setParent(root);
 			}
-		} 
+		}
 	}
-	
+
 	public void order(Player newPlayer) {
 		if (newPlayer != null) {
 			order(newPlayer.getLeft());
@@ -49,23 +49,21 @@ public class PlayerController {
 			order(newPlayer.getRight());
 		}
 	}
-	
+
 	private String toString(Player newPlayer) {
-		String alert="";
-		
-		if(newPlayer == null) {
+		String alert = "";
+
+		if (newPlayer == null) {
 			alert = "There's no winner";
 			return alert;
-		}
-		else {
-			alert = newPlayer.getPlayer() + "-" 
-		+ newPlayer.getScore() + "-" + newPlayer.getCol() + "-" 
-					+ newPlayer.getRows() + "-" + newPlayer.getNumSnakes() 
-					+ "-" + newPlayer.getNumLadders() + "-" + newPlayer.getNumPlayers();
+		} else {
+			alert = newPlayer.getPlayer() + "-" + newPlayer.getScore() + "-" + newPlayer.getCol() + "-"
+					+ newPlayer.getRows() + "-" + newPlayer.getNumSnakes() + "-" + newPlayer.getNumLadders() + "-"
+					+ newPlayer.getNumPlayers();
 			return alert;
 		}
 	}
-	
+
 	public Player getRoot() {
 		return root;
 	}
