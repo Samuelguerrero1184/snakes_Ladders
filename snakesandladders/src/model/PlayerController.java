@@ -41,4 +41,37 @@ public class PlayerController {
 		} 
 	}
 	
+	public void order(Player newPlayer) {
+		if (newPlayer != null) {
+			order(newPlayer.getLeft());
+			position++;
+			System.out.println(position + "." + toString(newPlayer));
+			order(newPlayer.getRight());
+		}
+	}
+	
+	private String toString(Player newPlayer) {
+		String alert="";
+		
+		if(newPlayer == null) {
+			alert = "There's no winner";
+			return alert;
+		}
+		else {
+			alert = newPlayer.getPlayer() + "-" 
+		+ newPlayer.getScore() + "-" + newPlayer.getCol() + "-" 
+					+ newPlayer.getRows() + "-" + newPlayer.getNumSnakes() 
+					+ "-" + newPlayer.getNumLadders() + "-" + newPlayer.getNumPlayers();
+			return alert;
+		}
+	}
+	
+	public Player getRoot() {
+		return root;
+	}
+
+	public void restartPosition() {
+		position = 0;
+	}
+
 }

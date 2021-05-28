@@ -12,8 +12,8 @@ public class Board {
 	private Board nextMvmnt;
 	
 
-	public Board(int rowAndColumn) {
-		this.size= rowAndColumn;
+	public Board(int size) {
+		this.size= size;
 		leftCorchette = '['; rightCorchette =']';
 	}
 	

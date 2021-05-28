@@ -41,7 +41,6 @@ public class Menu  {
 			}
 			startprogram();	
 		}
-		
 	}
 
 
@@ -84,9 +83,9 @@ public class Menu  {
 			Random random = new Random();
 			int down = (2 + random.nextInt(firstHalf));
 		
-			if(boardC.valLadder(boardC.Board(down))) {
+			if(boardC.valLadder(boardC.readBoard(down))) {
 				char Eol = (char)(type);
-				boardC.addLadder(Eol, boardC.Board(down));
+				boardC.addLadder(Eol, boardC.readBoard(down));
 				addEol(rows, columns, ladders=ladders-1, type=type+1);
 			}else {
 				addEol(rows, columns, ladders, type);
