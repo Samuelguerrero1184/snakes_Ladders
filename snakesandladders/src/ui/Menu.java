@@ -154,7 +154,7 @@ public class Menu {
 					boardC.mvmnts(turn);
 					if (boardC.movePlayers(player, turn, dice)) {
 						System.out.println(boardC.showContent(row, column));
-						System.out.println("Player " + player + " has won!");
+						System.out.println("Player " + player + " has won! Congrats!");
 						System.out.println("Now, put your name: ");
 						String realName = br.readLine();
 
@@ -196,7 +196,7 @@ public class Menu {
 					boardC.mvmnts(turn);
 					if (boardC.movePlayers(player, turn, dice)) {
 						System.out.println(boardC.showContent(row, column));
-						System.out.println("Player " + player + " has won!");
+						System.out.println("Player " + player + " has won! Congrats!");
 						System.out.println("Now, put your name: ");
 						releaseEnter();
 						String realName = br.readLine();
